@@ -20,23 +20,25 @@ const menuItems = [
 const Header = ({children}) => {
    return(
     <>
-      <div className='header__content'>
+    <Box>
+      
         <AppBar position='static'
-        sx={{display: 'flex', justifyContent: 'space-between'}}>
-          <Container className='header' maxWidth='xl'>
+        sx={{display: 'flex', justifyContent: 'space-between', backgroundColor: '#1E2235'}}>
+          <Container className='header' maxWidth='xl' sx={{display: 'flex', justifyContent: 'space-between'}}>
             <Box sx={{
               display: 'flex',
               alignItems: 'center',
               columnGap: '15px'
             }}>
               <MenuIcon />
-              <img className='header__logo' src='../icon_nav/logo.svg' alt='logo'/>
+              <img src='../assets/image/svg/logo.svg' alt='logo'/>
             </Box>
             
             <Toolbar className='header__panel' disableGutters>
-              <List className='header__list'>
+              <List className='header__list' sx={{display: 'flex'}}>
                 {menuItems.map((list) => {
                   return <Link href={list.path}><ListItem className='header__list_item'
+                            sx={{whiteSpace: 'nowrap', fontSize: '18px', fontWeight: 600, color: '#ABADC6'}}
                             button
                             key={list.nameLink}
                             >
@@ -63,7 +65,8 @@ const Header = ({children}) => {
               </Box>
           </Container>
         </AppBar>
-      </div>
+      
+      </Box>
       {children}
     </>    
   );
