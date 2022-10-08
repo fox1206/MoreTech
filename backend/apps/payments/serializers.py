@@ -13,3 +13,7 @@ class TransactionSerializer(serializers.ModelSerializer):
             "receiver",
             "amount"
         ]
+
+
+class BalanceSerializer():
+    pass
