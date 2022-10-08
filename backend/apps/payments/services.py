@@ -3,11 +3,11 @@ import urllib.parse
 import httpx
 
 
-API_BASE_URL = "https://hackathon.lsp.team/hk"
+API_BASE_URL = "https://hackathon.lsp.team/"
 
 
 def new_wallet():
-	url = urllib.parse.urljoin(API_BASE_URL, '/v1/wallets/new')
+	url = urllib.parse.urljoin(API_BASE_URL, '/hk/v1/wallets/new')
 	headers = {
 		"Accept": "application/json"
 	}
@@ -16,7 +16,7 @@ def new_wallet():
 
 
 def new_transaction(sender, receiver, amount):
-	url = urllib.parse.urljoin(API_BASE_URL, '/v1/transfers/matic')
+	url = urllib.parse.urljoin(API_BASE_URL, '/hk/v1/transfers/matic')
 	headers = {
 		"Content-Type": "application/json",
 		"Accept": "application/json"
@@ -31,9 +31,13 @@ def new_transaction(sender, receiver, amount):
 
 
 def get_balance(public_key):
-	url = 'https://hackathon.lsp.team/v1/wallets/0xd3Fce7410790752Ee0E0d306904376aF92b469Ef/balance'
+	url = urllib.parse.urljoin(
+		API_BASE_URL,
+		f'/hk/v1/wallets/{public_key}/balance'
+	)
 	headers = {
 		"Accept": "application/json"
 	}
-	balance_json = httpx.get(url, headers=headers)
-	return balance_json.json()
+	print(url)
+	balance_json = httpx.get(url, headers=headers).json()
+	return balance_json

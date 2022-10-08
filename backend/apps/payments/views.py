@@ -46,5 +46,4 @@ class UserBalanceView(APIView):
 	def get(self, request):
 		wallet = Wallet.objects.get(user=request.user)
 		balance_json = wallet.get_balance()
-		print(balance_json, wallet.private_key, wallet.public_key)
 		return Response(balance_json, status=200)
