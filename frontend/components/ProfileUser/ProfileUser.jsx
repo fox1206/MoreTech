@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import {Avatar, Button, Container, Typography} from "@mui/material";
 import Grid from "@mui/material/Grid";
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import AddReactionIcon from '@mui/icons-material/AddReaction';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import BoxElements from "../../layouts/BoxElements";
 import City from "./City";
@@ -44,7 +44,7 @@ export default function ProfileUser(){
                             </Grid>
                             <Grid xs={12} container>
                                 <Grid mt={2} xs={3}>
-                                    <MonetizationOnIcon sx={{
+                                    <AddReactionIcon sx={{
                                         width: 50,
                                     }}/>
                                 </Grid>
@@ -54,7 +54,7 @@ export default function ProfileUser(){
                                     }}>Монеты</Typography>
                                     <Typography sx={{
                                         fontSize: 20
-                                    }}>$12,202</Typography>
+                                    }}>12,202</Typography>
                                 </Grid>
                             </Grid>
                         </Grid>
