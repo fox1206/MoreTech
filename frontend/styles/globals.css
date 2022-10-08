@@ -55,7 +55,8 @@ a {
   padding-top: 23px;
 }
 .finance__list_user:hover,
-.my__fnance:hover{
+.my__fnance:hover,
+.history__sales:hover{
   background-color: rgba(0, 0, 0, 0);
 }
 /* Переопределение стилей для главной страницы (end) */
@@ -71,3 +72,34 @@ a {
   color: #FFFFFF;
 }
 /* Переопределение стилей для авторизации (end) */
+
+/* Переопределение стилей для Маркетплейса (start) */
+.shop__btn:focus{
+  border: none;
+  color: #FFFFFF;
+}
+.shop__btn:hover{
+  border: none;
+}
+.shop__coloring{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 276px;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+  background-repeat: no-repeat;
+  background-image: url('../public/assets/image/svg/coloringShop.svg');
+}
+.good__image{
+  height: 124px;
+  background-image: url('../public/assets/image/svg/good.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+}
+.history__sales{
+  padding-top: 11px;
+}
+/* Переопределение стилей для Маркетплейса (end) */
