@@ -16,7 +16,9 @@ const menuItems = [
     {nameLink: "Главная", path: '/'},
     {nameLink: "Маркетплейс", path: '/shop'},
     {nameLink: "Банк идей", path: '/idea'},
-    {nameLink: "События", path: '/event'}, ];
+    {nameLink: "События", path: '/event'}, 
+    {nameLink: "Творческая среда", path: '/creative_environment'},
+  ];
 
 const Header = ({children}) => {
    return(
