@@ -1,6 +1,7 @@
 import React from "react";
 import {Card, CardHeader, CardContent, CardActions, Button, Typography} from "@mui/material";
 import CachedIcon from '@mui/icons-material/Cached';
+import CountFinance from "./CountFinance";
 
 export const MyFinance = () => {
   return (
@@ -14,7 +15,7 @@ export const MyFinance = () => {
         }}>
         <CardHeader title={"Мои финансы"} sx={{padding: 0}}/>
         <CardContent sx={{padding: '40px 0 0 0'}}>
-               
+          <CountFinance />       
         </CardContent>
         <CardActions sx={{padding: '40px 0 0 0'}}>
           <Button

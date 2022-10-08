@@ -42,3 +42,21 @@ a {
   fill: #ABADC6;
 }
 /* Переопределение стилей header (end) */
+
+/* Переопределение стилей для главной страницы (start) */
+.finance__list_user{
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 11px;
+}
+.my__fnance{
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 23px;
+}
+.finance__list_user:hover,
+.my__fnance:hover{
+  background-color: rgba(0, 0, 0, 0);
+}
+/* Переопределение стилей для главной страницы (end) */
+

@@ -9,11 +9,9 @@ export const ListUser = () => {
   return (
     <List sx={{width: '100%'}}>
         {users.map((user) => {
-          return <ListItem sx={{
+          return <ListItem className="finance__list_user" sx={{
             display: 'flex',
             justifyContent: 'space-between',
-            paddingLeft: 0,
-            paddingRight: 0
           }} key={user.id}>
           <Box
             sx={{

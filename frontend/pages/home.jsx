@@ -4,7 +4,7 @@ import {Typography, Container} from '@mui/material';
 const HomePages = ({children}) => {
   return (
     <div>
-      <Container maxWidth='xl'>
+      <Container maxWidth='xl' sx={{backgroundColor: '#161826'}}>
         <div>
           {children}
         </div>          
