@@ -24,3 +24,21 @@ a {
     background: black;
   }
 }
+
+/* Переопределение стилей header (start) */
+.MuiListItem-gutters:hover{
+  background-color: #424867;
+  border-radius: 12px;
+}
+.MuiListItem-gutters:focus{
+  background-color: #424867;
+  border-radius: 12px;
+  color: #FFFFFF;
+}
+.MuiListItem-padding{
+  padding: 5px 12px;
+}
+.MuiSvgIcon-root{
+  fill: #ABADC6;
+}
+/* Переопределение стилей header (end) */
