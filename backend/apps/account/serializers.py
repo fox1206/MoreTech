@@ -33,10 +33,8 @@ class AccountSerializer(serializers.ModelSerializer):
             "avatar",
             "birthday",
             "bio",
-            "phone",
             "city",
             "position",
-            "departament",
             "achievements",
         ]
         ref_name = 'account_profile'

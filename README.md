@@ -1,7 +1,6 @@
 ### Команды для Docker
 
 Запуск проекта
-
 ~~~
 docker-compose up -d --build 
 ~~~
