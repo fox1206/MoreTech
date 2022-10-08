@@ -87,34 +87,7 @@ export default function StatisticActive(){
                                     </TableBody>
                             </Table>
                         </TableContainer>
-
-
-                        {/* <Grid container pb={3}>
-                            <Grid mr={2} p={1} xs={5} sx={{
-                                
-                            }}>
-                                <Typography color="#ABADC6" sx={{
-                                    fontSize: 13
-                                }}>
-                                    За что начислено
-                                </Typography>
-                            </Grid>
-                            <Grid ml={0.7} p={1} xs={6} sx={{
-                                
-                            }}>
-                                <Typography color="#ABADC6" sx={{
-                                    fontSize: 12
-                                }}>
-                                    Доход
-                                </Typography>
-                                
-                            </Grid>
-                        </Grid> */}
-
-
-
                     <Grid>
-
                     </Grid>
                 </Grid>
             </BoxElements>
