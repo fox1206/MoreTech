@@ -36,7 +36,8 @@ class Wallet(models.Model):
 class Transaction(models.Model):
     TYPE_CHOICE = (
         ("digital_rubles", "Цифровые рубли"),
-        ("matic", "Matic")
+        ("matic", "Matic"),
+        ("nft", "NFT")
     )
     sender = models.ForeignKey(
         User,
@@ -59,46 +60,15 @@ class Transaction(models.Model):
         max_length=128
     )
     amount = models.DecimalField(
-        'размер бонуса',
+        'Сумма (для денег)',
         max_digits=8,
         decimal_places=2,
-        default=0
+        default=0,
+        blank=True,
     )
-    created = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        verbose_name = "транзакция"
-        verbose_name_plural = "транзакции"
-
-    def __str__(self):
-        return f'{self.sender} -> {self.receiver}'
-
-    @property
-    def status(self):
-        return get_status(self.transaction_hash)
-
-
-class NFTTransaction(models.Model):
-    sender = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        verbose_name='отправитель',
-        related_name='sent_nft'
-    )
-    receiver = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        verbose_name='получатель',
-        related_name='recieved_nft'
-    )
-    transaction_hash = models.CharField(
-        max_length=128
-    )
-    token_id = models.DecimalField(
-        'размер бонуса',
-        max_digits=8,
-        decimal_places=2,
-        default=0
+    token_id = models.PositiveIntegerField(
+        'Token ID (для NFT)',
+        blank=True,
     )
     created = models.DateTimeField(auto_now_add=True)
 

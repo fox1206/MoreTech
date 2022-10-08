@@ -14,18 +14,6 @@ class TransactionSerializer(serializers.ModelSerializer):
             "transaction_type",
             "receiver",
             "amount",
-            "transaction_hash"
-        ]
-
-
-class NFTTransactionSerializer(serializers.ModelSerializer):
-    transaction_hash = serializers.ReadOnlyField()
-
-    class Meta:
-        model = models.Transaction
-        fields = [
-            "id",
-            "receiver",
             "token_id",
             "transaction_hash"
         ]

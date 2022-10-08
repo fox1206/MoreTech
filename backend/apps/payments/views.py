@@ -24,7 +24,8 @@ class TransactionView(ModelViewSet):
 		sender = self.request.user
 		sender_private_key = sender.wallet.private_key
 		receiver = serializer.validated_data.get('receiver')
-		amount = serializer.validated_data.get('amount')
+		amount = serializer.validated_data.get('amount') \
+			  or serializer.validated_data.get('token_id')
 		transaction_type = serializer.validated_data.get('transaction_type')
 
 		receiver_wallet = Wallet.objects.get(user=receiver)

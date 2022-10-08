@@ -40,7 +40,8 @@ def perform_transaction(sender, receiver, amount, transaction_type):
 		"Accept": "application/json"
 	}
 	transaction_json = httpx.post(url, headers=headers, json=data).json()
-	return transaction_json['transaction']
+	return transaction_json.get('transaction') \
+		or transaction_json.get('transaction_hash') 
 
 
 def get_balance(public_key):
