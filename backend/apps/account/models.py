@@ -60,3 +60,13 @@ class Account(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+# Заменить профиль на руководитель
+class EmployeeGroup(models.Model):
+    name = models.CharField('название', max_length=50)
+    profile = models.ForeignKey(Account, on_delete=models.CASCADE)
+    user = models.ManyToManyField(User)
+
+    def __str__(self):
+        return self.name
