@@ -2,17 +2,6 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-class Departament(models.Model):
-    name = models.CharField('название', max_length=50)
-
-    class Meta:
-        verbose_name = "отдел"
-        verbose_name_plural = "отделы"
-
-    def __str__(self):
-        return self.name
-
-
 class Event(models.Model):
     name = models.CharField('название', max_length=50)
     start = models.DateTimeField('начало')
