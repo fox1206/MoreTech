@@ -75,8 +75,6 @@ class FileSerializer(serializers.ModelSerializer):
 
 
 class EventListSerializer(serializers.ModelSerializer):
-    """Список событий"""
-
     class Meta:
         model = models.Event
         fields = [
