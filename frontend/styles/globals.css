@@ -60,3 +60,14 @@ a {
 }
 /* Переопределение стилей для главной страницы (end) */
 
+/* Переопределение стилей для авторизации (start) */
+.autho__image{
+  background-image: url('../public/assets/image/png/authorization.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.MuiInputBase-input{
+  color: #FFFFFF;
+}
+/* Переопределение стилей для авторизации (end) */
