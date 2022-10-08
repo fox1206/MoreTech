@@ -3,6 +3,7 @@ import HomePages from "./home";
 import Grid from "@mui/material/Grid";
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
+import { MyFinance } from "../components/Main/MyFinance";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
 
           <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2} pt={'32px'} pb={'86px'}>
             <Box gridColumn="span 4">
-              1
+              <MyFinance />
             </Box>
             <Box gridColumn="span 8">
               2
