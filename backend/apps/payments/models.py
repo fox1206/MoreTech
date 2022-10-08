@@ -2,6 +2,8 @@ from django.db import models
 
 from django.contrib.auth.models import User
 
+from .services import get_balance
+
 
 class Wallet(models.Model):
     user = models.OneToOneField(
@@ -19,6 +21,10 @@ class Wallet(models.Model):
 
     def __str__(self):
         return f'{self.user}'
+
+    def get_balance(self):
+        return get_balance(self.public_key)
+
 
 
 class Transaction(models.Model):

@@ -1,10 +1,13 @@
+from django.contrib.auth.models import User
 from django.db.models import Q
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 from ..base.permissions import IsAuthor
 from .models import Transaction, Wallet
 from .services import new_transaction
-from .serializers import TransactionSerializer
+from .serializers import TransactionSerializer, BalanceSerializer
 
 
 class TransactionView(ModelViewSet):
@@ -35,3 +38,13 @@ class TransactionView(ModelViewSet):
 
 class TransactionDetailView(ModelViewSet):
 	pass
+
+
+class UserBalanceView(APIView):
+	queryset = User.objects.all()
+
+	def get(self, request):
+		wallet = Wallet.objects.get(user=request.user)
+		balance_json = wallet.get_balance()
+		print(balance_json, wallet.private_key, wallet.public_key)
+		return Response(balance_json, status=200)
