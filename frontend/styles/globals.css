@@ -156,3 +156,33 @@ a {
   border-radius: 4px;
 }
 /* переопределение стилей страница события (end) */
+
+/* переопределение стилей для творческой среды (start) */
+.recent::before{
+  content: url(../public/assets/image/svg/creative__icon/1.svg);
+}
+.marked::before{
+  content: url(../public/assets/image/svg/creative__icon/2.svg);
+}
+.drafts::before{
+  content: url(../public/assets/image/svg/creative__icon/3.svg);
+}
+
+.button__design{
+  background: linear-gradient(90deg, #F158C0 0%, #6E49F5 100%);
+}
+
+.working__icon{
+  width: 14px;
+  height: 14px;
+  content: url(../public/assets/image/svg/creative__icon/list__icon_creative.svg);
+}
+
+.last__publication__icon{
+  content: url(../public/assets/image/svg/creative__icon/flag.svg);
+}
+/* переопределение стилей для творческой среды (end) */
+
+
+
+
