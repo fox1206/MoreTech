@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import InputLabel from '@mui/material/InputLabel';
 import UserHistory from "../components/Creative/UserHistory";
-
+import CreativeWorking from "../components/Creative/CreativeWorking";
 
 const Creative = () => {
 
@@ -27,19 +27,25 @@ const Creative = () => {
           <UserHistory />
 
 
-          <Box gridColumn="span 6"
-          sx={{
-              backgroundColor: '#252A41',
-              padding: '24px',
-              borderRadius: '12px',
-              
-            }}>
-            xs=4
+          <Box gridColumn="span 6">
+            
+            <Typography pb={2}>
+              Продолжите работу с того места, где закончили
+            </Typography>
+
+            <CreativeWorking />
+
+
           </Box>      
         </Box>
       </Box>
     </HomePages>    
   );
 };
-
+// sx={{
+//               backgroundColor: '#252A41',
+//               padding: '24px',
+//               borderRadius: '12px',
+              
+//             }}
 export default Creative;

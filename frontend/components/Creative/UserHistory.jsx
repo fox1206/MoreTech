@@ -14,85 +14,87 @@ const eventHistory = [
  
 const UserHistory = () => {
   return (
-    <Box gridColumn="span 3"
-    sx={{
-        backgroundColor: '#252A41',
-        padding: '2px',
-        borderRadius: '12px',
-        background: 'linear-gradient(to right, #F158C0, #6E49F5)'
-      }}>
-      
-      <Box sx={{
-        backgroundColor: '#252A41',
-        borderRadius: '12px',
-        padding: '22px'
-      }}>
-        <Typography
-          variant="h6"
-          component="h2"
-          color='#FFFFFF'
-          pb={3}
-        >
-        Иван Петров
-        </Typography> 
-
-        <Box pb={3} sx={{display: 'flex', columnGap: 2, alignItems: 'center'}}>
-          <Avatar sx={{
-            width: '100px',
-            height: '100px',
-          }}>A</Avatar>
-
-          <Box>
-            <Box
-              sx={{
-                fontSize: '16px'
-              }}>
-              ivan.petrov@yandex.ru</Box>
-            <Box
-                sx={{
-                  fontSize: '14px',
-                  color: '#ABADC6'
-                }}
-              >
-              Moskow</Box>
-          </Box>
-        </Box>
-
-        <List>
-          {eventHistory.map((event) => (
-            <ListItemButton key={event.id}
-              sx={{padding: '8px 0'}}
-            >
-              <ListItemText primary={event.event} className={event.style}
-                sx={{
-                  fontSize: '16px', 
-                  display: 'flex', 
-                  columnGap: 2,
-                  cursor: 'pointer',
-                  backgroundColor: '#303650',
-                  padding: '12px 19px',
-                  borderRadius: '12px'
-                  
-                  }}/>
-            </ListItemButton>
-
-          ))}
-        </List>
+    <Box gridColumn="span 3">
+      <Box
+      sx={{
+          backgroundColor: '#252A41',
+          padding: '2px',
+          borderRadius: '12px',
+          background: 'linear-gradient(to right, #F158C0, #6E49F5)'
+        }}>
         
-        <Button className='button__design'
-              variant="contained"
-              startIcon={<AddIcon />}
-              sx={{
-                width: '100%',
-                borderRadius: '12px',
-                paddingTop: '18px',
-                paddingBottom: '18px',
-                backgroundColor: '#4338CA',
-                }}
-            >
-            Добавить публикацию</Button>
-        </Box>
-       
+        <Box sx={{
+          backgroundColor: '#252A41',
+          borderRadius: '12px',
+          padding: '22px'
+        }}>
+          <Typography
+            variant="h6"
+            component="h2"
+            color='#FFFFFF'
+            pb={3}
+          >
+          Иван Петров
+          </Typography> 
+
+          <Box pb={3} sx={{display: 'flex', columnGap: 2, alignItems: 'center'}}>
+            <Avatar sx={{
+              width: '100px',
+              height: '100px',
+            }}>A</Avatar>
+
+            <Box>
+              <Box
+                sx={{
+                  fontSize: '16px'
+                }}>
+                ivan.petrov@yandex.ru</Box>
+              <Box
+                  sx={{
+                    fontSize: '14px',
+                    color: '#ABADC6'
+                  }}
+                >
+                Moskow</Box>
+            </Box>
+          </Box>
+
+          <List>
+            {eventHistory.map((event) => (
+              <ListItemButton key={event.id}
+                sx={{padding: '8px 0'}}
+              >
+                <ListItemText primary={event.event} className={event.style}
+                  sx={{
+                    fontSize: '16px', 
+                    display: 'flex', 
+                    columnGap: 2,
+                    cursor: 'pointer',
+                    backgroundColor: '#303650',
+                    padding: '12px 19px',
+                    borderRadius: '12px'
+                    
+                    }}/>
+              </ListItemButton>
+
+            ))}
+          </List>
+          
+          <Button className='button__design'
+                variant="contained"
+                startIcon={<AddIcon />}
+                sx={{
+                  width: '100%',
+                  borderRadius: '12px',
+                  paddingTop: '18px',
+                  paddingBottom: '18px',
+                  backgroundColor: '#4338CA',
+                  }}
+              >
+              Добавить публикацию</Button>
+          </Box>
+        
+      </Box>
     </Box>
   );
 };

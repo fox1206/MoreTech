@@ -172,8 +172,13 @@ a {
   background: linear-gradient(90deg, #F158C0 0%, #6E49F5 100%);
 }
 
-.border__designer{
-  
+.working__icon{
+  width: 14px;
+  height: 14px;
+  content: url(../public/assets/image/svg/creative__icon/list__icon_creative.svg);
 }
+/* переопределение стилей для творческой среды (end) */
+
+
 
 
