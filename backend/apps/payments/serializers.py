@@ -11,9 +11,10 @@ class TransactionSerializer(serializers.ModelSerializer):
         model = models.Transaction
         fields = [
             "id",
-            # "sender",
+            "transaction_type",
             "receiver",
             "amount",
+            "token_id",
             "transaction_hash"
         ]
 
