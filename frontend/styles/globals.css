@@ -103,3 +103,56 @@ a {
   padding-top: 11px;
 }
 /* Переопределение стилей для Маркетплейса (end) */
+
+/* Переопределение стилей для страницы с Идеями (start) */
+.box__idea{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+/* Переопределение стилей для страницы с Идеями (end) */  
+
+/* переопределение стилей для календаря (start)*/
+.MuiPickerStaticWrapper-content{
+  height: 273px;
+  background-color: #252A41;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.MuiPickersDay-root{
+  border-radius: 0;
+  color: #FFFFFF;
+  background-color: #252A41;
+  font-size: 14px;
+  height: 25px;
+}
+
+.MuiDayPicker-weekDayLabel{
+  color: #ABADC6;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.MuiPickersCalendarHeader-label{
+  font-size: 16px;
+  color: #ABADC6;
+  font-weight: 600;
+}
+
+.MuiPickersCalendarHeader-switchViewButton{
+  display: none;
+}
+
+.MuiSvgIcon-root{
+  color: #ABADC6;
+}
+/* переопределение стилей для календаря (end)*/
+
+/* переопределение стилей страница события (start) */
+.event__icon{
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+/* переопределение стилей страница события (end) */
