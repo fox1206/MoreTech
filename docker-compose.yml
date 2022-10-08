@@ -1,0 +1,32 @@
+version: "3"
+
+volumes:
+  xaxaton_postgres:
+
+services:
+  xaxaton_postgres:
+    image: postgres
+    restart: always
+    container_name: ${POSTGRES_HOST}
+    env_file:
+      - .env
+    volumes:
+      - xaxaton_postgres:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    depends_on:
+      - xaxaton_postgres
+    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    image: backend
+    container_name: backend
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:8000:8000"
+    restart: unless-stopped
+    tty: True
+    working_dir: /backend
+
