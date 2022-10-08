@@ -7,10 +7,11 @@ from .yasg import urlpatterns as docs
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('api/v1/shop/', include('apps.shop.urls')),
+    path('api/v1/shop/', include('apps.shop.urls')),
     path('api/v1/account/', include('apps.account.urls')),
     path('api/v1/management/', include('apps.management.urls')),
-    # path('api/v1/social/', include('apps.social.urls')),
+    path('api/v1/social/', include('apps.social.urls')),
+    path('api/v1/payments/', include('apps.payments.urls')),
 ]
 urlpatterns += docs
 

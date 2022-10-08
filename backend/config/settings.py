@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'apps.social',
     'apps.management',
     'apps.shop',
+    'apps.payments',
 
     'corsheaders',
     'rest_framework',
