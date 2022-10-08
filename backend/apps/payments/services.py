@@ -15,8 +15,8 @@ def new_wallet():
 	return wallet_json['privateKey'], wallet_json['publicKey']
 
 
-def new_transaction(sender, receiver, amount):
-	url = urllib.parse.urljoin(API_BASE_URL, '/hk/v1/transfers/matic')
+def ruble_transaction(sender, receiver, amount):
+	url = urllib.parse.urljoin(API_BASE_URL, '/hk/v1/transfers/ruble')
 	headers = {
 		"Content-Type": "application/json",
 		"Accept": "application/json"
@@ -24,10 +24,10 @@ def new_transaction(sender, receiver, amount):
 	data = {
 		"fromPrivateKey": sender,
 		"toPublicKey": receiver,
-		"amount": amount
+		"amount": float(amount)
 	}
 	transaction_json = httpx.post(url, data=data).json()
-	return transaction_json['transactionHash']
+	return transaction_json['transaction']
 
 
 def get_balance(public_key):
@@ -38,6 +38,21 @@ def get_balance(public_key):
 	headers = {
 		"Accept": "application/json"
 	}
-	print(url)
 	balance_json = httpx.get(url, headers=headers).json()
 	return balance_json
+
+
+def get_balance_history(public_key):
+	pass
+
+
+def get_status(transaction_hash):
+	url = urllib.parse.urljoin(
+		API_BASE_URL,
+		f'/hk/v1/transfers/status/{transactionHash}'
+	)
+	headers = {
+		"Accept": "application/json"
+	}
+	status_json = httpx.get(url, headers=headers).json()
+	return status_json

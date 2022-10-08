@@ -6,7 +6,7 @@ from rest_framework.response import Response
 
 from ..base.permissions import IsAuthor
 from .models import Transaction, Wallet
-from .services import new_transaction
+from .services import ruble_transaction
 from .serializers import TransactionSerializer, BalanceSerializer
 
 
@@ -21,12 +21,17 @@ class TransactionView(ModelViewSet):
 		return queryset
 
 	def perform_create(self, serializer):
-		sender_hash = self.request.user.wallet.private_key
+		sender = self.request.user
+		sender_private_key = sender.wallet.private_key
 		receiver = serializer.validated_data.get('receiver')
 		amount = serializer.validated_data.get('amount')
 
 		receiver_wallet = Wallet.objects.get(user=receiver)
-		transaction_hash = new_transaction(sender_hash, receiver_wallet.private_key, amount)
+		transaction_hash = ruble_transaction(
+			sender_private_key,
+			receiver_wallet.public_key,
+			amount
+		)
 
 		serializer.save(
 			sender=sender,
@@ -36,8 +41,11 @@ class TransactionView(ModelViewSet):
 		)
 
 
-class TransactionDetailView(ModelViewSet):
-	pass
+class TransactionDetailView(APIView):
+	queryset = User.objects.all()
+
+	def get(self, request):
+		pass
 
 
 class UserBalanceView(APIView):
