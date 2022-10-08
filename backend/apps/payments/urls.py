@@ -7,6 +7,6 @@ urlpatterns = [
     # get - все транзакции пользователя
     path('user-transaction/', views.TransactionView.as_view({'get': 'list', 'post': 'create'})),
     # детальная транзакция
-    path('transaction/<int:pk>/', views.TransactionDetailView.as_view({'get': 'retrieve'})),
+    path('transaction/<int:pk>/', views.TransactionDetailView.as_view()),
     path('user-balance/', views.UserBalanceView.as_view()),
 ]
