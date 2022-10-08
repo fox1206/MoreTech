@@ -15,17 +15,29 @@ def new_wallet():
 	return wallet_json['privateKey'], wallet_json['publicKey']
 
 
-def ruble_transaction(sender, receiver, amount):
-	print(sender, receiver)
-	url = urllib.parse.urljoin(API_BASE_URL, '/hk/v1/transfers/ruble')
-	headers = {
-		"Content-Type": "application/json",
-		"Accept": "application/json"
-	}
+def perform_transaction(sender, receiver, amount, transaction_type):	
 	data = {
 		"fromPrivateKey": sender,
 		"toPublicKey": receiver,
 		"amount": float(amount)
+	}
+
+	if transaction_type == 'digital_rubles':
+		relative_part = '/hk/v1/transfers/ruble'
+	elif transaction_type == 'matic':
+		relative_part = '/hk/v1/transfers/matic'
+	elif transaction_type == 'nft':
+		relative_part = '/hk/v1/transfers/nft'
+		data["tokenId"] = amount
+		del data["amount"]
+	else:
+		raise ValueError('wrong transaction type')
+
+	url = urllib.parse.urljoin(API_BASE_URL, relative_part)
+
+	headers = {
+		"Content-Type": "application/json",
+		"Accept": "application/json"
 	}
 	transaction_json = httpx.post(url, headers=headers, json=data).json()
 	return transaction_json['transaction']
