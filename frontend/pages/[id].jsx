@@ -32,7 +32,7 @@ export default function User(){
                     <Grid xs={3} ml={2} mt={2}>
                         <StatisticActive/>
                     </Grid>
-                    <Grid xs={8} mt={2} ml={2}>
+                    <Grid xs={7.7} mt={-3.5} ml={2}>
                         <LastTransactions />
                     </Grid>
                 </Grid>

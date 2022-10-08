@@ -157,9 +157,23 @@ a {
 }
 /* переопределение стилей страница события (end) */
 
-/* .n3sxqu-MuiContainer-root{
-  width: 100%;
+/* переопределение стилей для творческой среды (start) */
+.recent::before{
+  content: url(../public/assets/image/svg/creative__icon/1.svg);
+}
+.marked::before{
+  content: url(../public/assets/image/svg/creative__icon/2.svg);
+}
+.drafts::before{
+  content: url(../public/assets/image/svg/creative__icon/3.svg);
+}
 
+.button__design{
+  background: linear-gradient(90deg, #F158C0 0%, #6E49F5 100%);
+}
+
+.border__designer{
   
-} */
-/* MuiContainer-root MuiContainer-maxWidthSm css-n3sxqu-MuiContainer-root */
+}
+
+

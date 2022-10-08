@@ -25,12 +25,11 @@ const transactions = [
 
 export default function LastTransactions(){
     return(
-        <Box sx={{ flexGrow: 1, width: '100%', 
-            backgroundColor: '#252A41',
-            borderRadius: '12px',
-            padding: '12px 24px 0',
-            marginTop: '-40px',
-         }}>
+        <>
+            <Container sx={{
+                    background: "#252A41",
+                    borderRadius: 3}}>
+
                 <Grid color={"white"} pt={2} pb={3}>
                     <Grid xs={11} sx={{fontSize: '20px'}}>Последние операции</Grid>
                 </Grid>
@@ -98,6 +97,8 @@ export default function LastTransactions(){
 
                     </Grid>
                 </Grid>
-        </Box>
+            </Container>
+        </>
+
     )
 }
