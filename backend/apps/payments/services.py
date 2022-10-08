@@ -3,11 +3,11 @@ import urllib.parse
 import httpx
 
 
-API_BASE_URL = "https://hackathon.lsp.team/hk"
+API_BASE_URL = "https://hackathon.lsp.team/"
 
 
 def new_wallet():
-	url = urllib.parse.urljoin(API_BASE_URL, '/v1/wallets/new')
+	url = urllib.parse.urljoin(API_BASE_URL, '/hk/v1/wallets/new')
 	headers = {
 		"Accept": "application/json"
 	}
@@ -15,8 +15,8 @@ def new_wallet():
 	return wallet_json['privateKey'], wallet_json['publicKey']
 
 
-def new_transaction(sender, receiver, amount):
-	url = urllib.parse.urljoin(API_BASE_URL, '/v1/transfers/matic')
+def ruble_transaction(sender, receiver, amount):
+	url = urllib.parse.urljoin(API_BASE_URL, '/hk/v1/transfers/ruble')
 	headers = {
 		"Content-Type": "application/json",
 		"Accept": "application/json"
@@ -24,16 +24,35 @@ def new_transaction(sender, receiver, amount):
 	data = {
 		"fromPrivateKey": sender,
 		"toPublicKey": receiver,
-		"amount": amount
+		"amount": float(amount)
 	}
 	transaction_json = httpx.post(url, data=data).json()
-	return transaction_json['transactionHash']
+	return transaction_json['transaction']
 
 
 def get_balance(public_key):
-	url = 'https://hackathon.lsp.team/v1/wallets/0xd3Fce7410790752Ee0E0d306904376aF92b469Ef/balance'
+	url = urllib.parse.urljoin(
+		API_BASE_URL,
+		f'/hk/v1/wallets/{public_key}/balance'
+	)
 	headers = {
 		"Accept": "application/json"
 	}
-	balance_json = httpx.get(url, headers=headers)
-	return balance_json.json()
+	balance_json = httpx.get(url, headers=headers).json()
+	return balance_json
+
+
+def get_balance_history(public_key):
+	pass
+
+
+def get_status(transaction_hash):
+	url = urllib.parse.urljoin(
+		API_BASE_URL,
+		f'/hk/v1/transfers/status/{transactionHash}'
+	)
+	headers = {
+		"Accept": "application/json"
+	}
+	status_json = httpx.get(url, headers=headers).json()
+	return status_json
