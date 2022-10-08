@@ -1,11 +1,42 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import React from "react"
+import HomePages from "./home";
+import Grid from "@mui/material/Grid";
+import { Typography } from '@mui/material';
+import Box from '@mui/material/Box';
 
 export default function Home() {
   return (
 
-    <p>2</p>
+    <HomePages>
+          <Typography
+              variant="h6"
+              component="h2"
+              color='#FFFFFF'
+              pt={3}
+              pl={7}
+            >
+            Главная
+          </Typography>
+
+          <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2} pt={'32px'} pb={'86px'}>
+            <Box gridColumn="span 4">
+              1
+            </Box>
+            <Box gridColumn="span 8">
+              2
+            </Box>
+            <Box gridColumn="span 4">
+              3
+            </Box>
+            <Box gridColumn="span 8">
+              4
+            </Box>
+          </Box>
+
+    </HomePages>    
+    
+    
+
     // <div className={styles.container}>
     //   <Head>
     //     <title>Create Next App</title>
