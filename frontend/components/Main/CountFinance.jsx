@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Typography, List, ListItem, Box} from "@mui/material";
 
 const wallet = [{"typeMoney": "NFT-сертификаты", "count": 30, "id": 1}, {"typeMoney": "Монеты", "count": 20, "id": 2}];
