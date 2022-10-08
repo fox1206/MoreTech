@@ -55,6 +55,7 @@ class Transaction(models.Model):
         decimal_places=2,
         default=0
     )
+    created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = "транзакция"

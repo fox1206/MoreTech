@@ -16,6 +16,7 @@ def new_wallet():
 
 
 def ruble_transaction(sender, receiver, amount):
+	print(sender, receiver)
 	url = urllib.parse.urljoin(API_BASE_URL, '/hk/v1/transfers/ruble')
 	headers = {
 		"Content-Type": "application/json",
@@ -26,7 +27,7 @@ def ruble_transaction(sender, receiver, amount):
 		"toPublicKey": receiver,
 		"amount": float(amount)
 	}
-	transaction_json = httpx.post(url, data=data).json()
+	transaction_json = httpx.post(url, headers=headers, json=data).json()
 	return transaction_json['transaction']
 
 

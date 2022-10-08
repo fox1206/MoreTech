@@ -25,7 +25,7 @@ class TransactionView(ModelViewSet):
 		sender_private_key = sender.wallet.private_key
 		receiver = serializer.validated_data.get('receiver')
 		amount = serializer.validated_data.get('amount')
-
+		print(receiver)
 		receiver_wallet = Wallet.objects.get(user=receiver)
 		transaction_hash = ruble_transaction(
 			sender_private_key,
