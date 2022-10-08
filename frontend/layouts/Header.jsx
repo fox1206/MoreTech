@@ -9,7 +9,8 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import Avatar from '@mui/material/Avatar';
-
+import {InputBase, IconButton} from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 // массив с хранением названия и ссылки на страницу
 const menuItems = [
     {nameLink: "Главная", path: '/'},
@@ -20,23 +21,25 @@ const menuItems = [
 const Header = ({children}) => {
    return(
     <>
-      <div className='header__content'>
+    <Box>
+      
         <AppBar position='static'
-        sx={{display: 'flex', justifyContent: 'space-between'}}>
-          <Container className='header' maxWidth='xl'>
+        sx={{display: 'flex', justifyContent: 'space-between', backgroundColor: '#1E2235'}}>
+          <Container maxWidth='xl' sx={{display: 'flex', justifyContent: 'space-between'}}>
             <Box sx={{
               display: 'flex',
               alignItems: 'center',
               columnGap: '15px'
             }}>
               <MenuIcon />
-              <img className='header__logo' src='../icon_nav/logo.svg' alt='logo'/>
+              <img src='../assets/image/svg/logo.svg' alt='logo'/>
             </Box>
             
-            <Toolbar className='header__panel' disableGutters>
-              <List className='header__list'>
+            <Toolbar disableGutters>
+              <List sx={{display: 'flex', columnGap: 2}}>
                 {menuItems.map((list) => {
-                  return <Link href={list.path}><ListItem className='header__list_item'
+                  return <Link href={list.path}><ListItem
+                            sx={{whiteSpace: 'nowrap', fontSize: '18px', fontWeight: 600, color: '#ABADC6'}}
                             button
                             key={list.nameLink}
                             >
@@ -55,15 +58,36 @@ const Header = ({children}) => {
               noValidate
               autoComplete="off"
               >
-                <TextField id="outlined-search" label="Поиск" type="search" />
-                <NotificationsNoneIcon />
-                <NightlightOutlinedIcon />
-                <GridViewOutlinedIcon />
+                <Box sx={{display: 'flex'}}>
+                  <InputBase
+                    sx={{ ml: 1, flex: 1, backgroundColor: '#252A41',
+                          borderRadius: '12px',
+                          padding: '1px 18px', 
+                          color: '#DCDEF3',
+                          fontSize: '14px'
+                      }}
+                    placeholder="Поиск"
+                    inputProps={{ 'aria-label': 'поиск' }}
+                  />
+                  <IconButton type="button" sx={{ 
+                      p: '10px',
+                      position: 'relative',
+                      left: '-45px' 
+                    }} aria-label="search">
+                    <SearchIcon />
+                  </IconButton>
+                </Box>
+                {/* <TextField id="outlined-search" label="Поиск" type="search" /> */}
+                
+                <NotificationsNoneIcon sx={{cursor: 'pointer'}}/>
+                <NightlightOutlinedIcon sx={{cursor: 'pointer'}}/>
+                <GridViewOutlinedIcon sx={{cursor: 'pointer'}}/>
                 <Avatar><Link href="/1">A</Link></Avatar>
               </Box>
           </Container>
         </AppBar>
-      </div>
+      
+      </Box>
       {children}
     </>    
   );

@@ -24,3 +24,50 @@ a {
     background: black;
   }
 }
+
+/* Переопределение стилей header (start) */
+.MuiListItem-gutters:hover{
+  background-color: #424867;
+  border-radius: 12px;
+}
+.MuiListItem-gutters:focus{
+  background-color: #424867;
+  border-radius: 12px;
+  color: #FFFFFF;
+}
+.MuiListItem-padding{
+  padding: 5px 12px;
+}
+.MuiSvgIcon-root{
+  fill: #ABADC6;
+}
+/* Переопределение стилей header (end) */
+
+/* Переопределение стилей для главной страницы (start) */
+.finance__list_user{
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 11px;
+}
+.my__fnance{
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 23px;
+}
+.finance__list_user:hover,
+.my__fnance:hover{
+  background-color: rgba(0, 0, 0, 0);
+}
+/* Переопределение стилей для главной страницы (end) */
+
+/* Переопределение стилей для авторизации (start) */
+.autho__image{
+  background-image: url('../public/assets/image/png/authorization.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.MuiInputBase-input{
+  color: #FFFFFF;
+}
+/* Переопределение стилей для авторизации (end) */
