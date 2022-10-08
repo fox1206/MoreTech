@@ -1,15 +1,10 @@
 from django.contrib import admin
 
-from .models import Account, Wallet, Achievement, Position
+from .models import Account, Achievement, Position
 
 
 @admin.register(Account)
 class ProfileAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(Wallet)
-class WalletAdmin(admin.ModelAdmin):
     pass
 
 

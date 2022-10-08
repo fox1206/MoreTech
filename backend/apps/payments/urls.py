@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     # post - новая транзакция
     # get - все транзакции пользователя
-    path('user-transactions/', views.TransactionView.as_view({'get': 'list', 'post': 'create'})),
+    path('user-transaction/', views.TransactionView.as_view({'get': 'list', 'post': 'create'})),
     # детальная транзакция
     path('transaction/<int:pk>/', views.TransactionDetailView.as_view({'get': 'retrieve'})),
 ]

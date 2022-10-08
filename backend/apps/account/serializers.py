@@ -1,16 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
-from .models import Account, Achievement, Wallet
-
-
-class WalletSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Wallet
-        fields = [
-            "id",
-            "balance"
-        ]
+from .models import Account, Achievement
 
 
 class AchievementSerializer(serializers.ModelSerializer):
@@ -42,7 +33,6 @@ class AccountSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     account = AccountSerializer()
-    wallet = WalletSerializer()
 
     class Meta:
         model = User
@@ -52,7 +42,6 @@ class UserSerializer(serializers.ModelSerializer):
             "last_name",
             "email",
             "account",
-            "wallet",
 
         ]
         ref_name = 'account_user'

@@ -60,24 +60,3 @@ class Account(models.Model):
 
     def __str__(self):
         return self.user.username
-
-
-class Wallet(models.Model):
-    user = models.OneToOneField(
-        User,
-        on_delete=models.CASCADE,
-        verbose_name='пользователь',
-    )
-    balance = models.DecimalField(
-        max_digits=8,
-        decimal_places=2,
-        default=0,
-        verbose_name='баланс'
-    )
-
-    class Meta:
-        verbose_name = "кошелек"
-        verbose_name_plural = "кошельки"
-
-    def __str__(self):
-        return f'{self.user.username}'

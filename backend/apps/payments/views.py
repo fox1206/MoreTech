@@ -2,7 +2,7 @@ from django.db.models import Q
 from rest_framework.viewsets import ModelViewSet
 
 from ..base.permissions import IsAuthor
-from .models import Transaction
+from .models import Transaction, Wallet
 from .services import new_transaction
 from .serializers import TransactionSerializer
 
@@ -22,8 +22,8 @@ class TransactionView(ModelViewSet):
 		receiver = serializer.validated_data.get('receiver')
 		amount = serializer.validated_data.get('amount')
 
-		receiver_hash = Wallet.objects.filter(user=receiver).public_key
-		transaction_hash = new_transaction(sender_hash, receiver_hash, amount)
+		receiver_wallet = Wallet.objects.get(user=receiver)
+		transaction_hash = new_transaction(sender_hash, receiver_wallet.private_key, amount)
 
 		serializer.save(
 			sender=sender,
