@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
-from .models import Account, Achievement
+from .models import Account, Achievement, EmployeeGroup
 
 
 class AchievementSerializer(serializers.ModelSerializer):
@@ -12,6 +12,36 @@ class AchievementSerializer(serializers.ModelSerializer):
             "icon",
             "name",
             "description"
+        ]
+
+
+class EmployeeUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = [
+            "id",
+            "first_name",
+            "last_name",
+        ]
+
+
+class EmployeeAccountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Account
+        fields = [
+            "avatar",
+        ]
+
+
+class EmployeeGroupSerializer(serializers.ModelSerializer):
+    user = EmployeeUserSerializer(many=True)
+
+    class Meta:
+        model = EmployeeGroup
+        fields = [
+            "id",
+            "profile",
+            "user",
         ]
 
 
@@ -27,6 +57,7 @@ class AccountSerializer(serializers.ModelSerializer):
             "city",
             "position",
             "achievements",
+            # "employee",
         ]
         ref_name = 'account_profile'
 

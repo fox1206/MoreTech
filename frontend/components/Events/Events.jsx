@@ -3,8 +3,11 @@ import { Card } from "@mui/material";
 import { CardHeader } from "@mui/material"; 
 import { CardContent } from "@mui/material";
 import EventDiscription from "./EventDiscription";
+import Link from "next/link";
+import {useRouter} from "next/router";
 
 export default function Events() {
+    const event = useRouter()
   const list = [
       {id: 1, title: "Курсы менеджеров", discription: "Какое-то описание событияКакое-то описание события"},
       {id: 1, title: "Курсы менеджеров", discription: "Какое-то описание событияКакое-то описание события"},
@@ -24,8 +27,9 @@ export default function Events() {
               color: '#818CF8',
               position: 'relative',
               top: -27,
-              align: 'right'
+              align: 'right',
             }}
+                      onClick={()=>event.push("/event")}
       />
           <CardContent sx={{padding: 0,
               display: 'flex',

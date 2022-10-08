@@ -1,17 +1,21 @@
 from rest_framework import serializers
 
 from . import models
+from ..account.serializers import UserSerializer
 
 
 class TransactionSerializer(serializers.ModelSerializer):
-    sender = serializers.ReadOnlyField()
+    transaction_hash = serializers.ReadOnlyField()
 
     class Meta:
         model = models.Transaction
         fields = [
-            "sender",
+            "id",
+            "transaction_type",
             "receiver",
-            "amount"
+            "amount",
+            "token_id",
+            "transaction_hash"
         ]
 
 
