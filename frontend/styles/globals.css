@@ -177,6 +177,10 @@ a {
   height: 14px;
   content: url(../public/assets/image/svg/creative__icon/list__icon_creative.svg);
 }
+
+.last__publication__icon{
+  content: url(../public/assets/image/svg/creative__icon/flag.svg);
+}
 /* переопределение стилей для творческой среды (end) */
 
 

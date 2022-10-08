@@ -2,10 +2,9 @@ import React from "react";
 import {Typography} from "@mui/material";
 import HomePages from "./home";
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import InputLabel from '@mui/material/InputLabel';
 import UserHistory from "../components/Creative/UserHistory";
 import CreativeWorking from "../components/Creative/CreativeWorking";
+import LastPublications from "../components/Creative/LastPublications";
 
 const Creative = () => {
 
@@ -35,17 +34,12 @@ const Creative = () => {
 
             <CreativeWorking />
 
-
+            <LastPublications />
+            
           </Box>      
         </Box>
       </Box>
     </HomePages>    
   );
 };
-// sx={{
-//               backgroundColor: '#252A41',
-//               padding: '24px',
-//               borderRadius: '12px',
-              
-//             }}
 export default Creative;
