@@ -105,7 +105,7 @@ export default function AwardModal({active, setActive}){
                     columnGap: '16px',
                     justifyContent: 'flex-end',
                 }}>
-                    <Button sx={{
+                    <Button onClick={() => close()} sx={{
                         backgroundColor: '#424867',
                         color: '#FFFFFF', 
                         textTransform: 'capitalize',

@@ -91,8 +91,8 @@ export default function Employees(){
                                                 padding: 1,
                                                 textAlign: "right"
                                             }}>
-                                                <Button onClick={()=>setOpen(true)}>
-                                                    +
+                                                <Button sx={{color: '#FFFFFF'}} onClick={()=>setOpen(true)}>
+                                                    Начисления
                                                 </Button>
                                             </TableCell>
                                         </TableRow>
